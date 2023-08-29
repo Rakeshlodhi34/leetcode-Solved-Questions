@@ -83,17 +83,20 @@ class Solution
     Node compute(Node head)
     {
         // your code here
-         Node curr = head;
-        while(curr.next != null){
-            if(curr.data < curr.next.data){
-                curr.data = curr.next.data;
-                curr.next = curr.next.next;
-                curr = head;
-            }else{
-                curr = curr.next;
+        Node temp = head;
+        while(temp.next!=null)
+        {
+            if(temp.data<temp.next.data)
+            {
+                temp.data = temp.next.data;
+                temp.next = temp.next.next;
+                temp = head;
+            }
+            else
+            {
+                temp = temp.next;
             }
         }
-        
         return head;
     }
 }
