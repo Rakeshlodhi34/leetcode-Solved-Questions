@@ -1,14 +1,20 @@
 class Solution {
     public boolean check(int[] nums) {
-        int count=0;
-        for(int i=1;i<nums.length;i++){
+        int n=nums.length;
+        int c=0;
+        for(int i=1;i<n;i++){
             if(nums[i-1]>nums[i]){
-                count++;
+                c++;
             }
+            }
+        if(nums[n-1]>nums[0]){
+            c++;
         }
-        if(nums[nums.length-1]>nums[0]){
-            count++;
+            if(c>1){
+                return false;   
         }
-        return count<=1;
+        else{
+                return true;
+    }
     }
 }
